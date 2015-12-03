@@ -135,7 +135,7 @@ void draw() {
   } */
 
 
-/*
+
   //hit enemy
   for(int i = 0 ; i < 5 ; i++){
   if(fighterX < eX[i]+60 && fighterX > eX[i]-50 ){
@@ -144,13 +144,43 @@ void draw() {
   eY[i] = 0;
   image(enemyImg,enemyX,enemyY);
   image(enemyImg,treasureX,treasureY);
-  //hpW -= 40;
+  hpW -= 40;
   if(hpW <= 0){
   gameState = GAME_OVER;
   }
   }
   }
-  } */
+  }
+  
+   for(int i = 0 ; i < 5 ; i++){
+  if(fighterX < eP2X[i]+60 && fighterX > eP2X[i]-50 ){
+  if(fighterY < eP2Y[i]+50 && fighterY > eP2Y[i]-50 ){
+  eP2X[i] = 0;   
+  eP2Y[i] = 0;
+  image(enemyImg,enemyX,enemyY);
+  image(enemyImg,treasureX,treasureY);
+  hpW -= 40;
+  if(hpW <= 0){
+  gameState = GAME_OVER;
+  }
+  }
+  }
+  } 
+  
+   for(int i = 0 ; i < 3 ; i++){
+  if(fighterX < eP3X[i]+60 && fighterX > eP3X[i]-50 ){
+  if(fighterY < eP3Y[i]+50 && fighterY > eP3Y[i]-50 ){
+  eP3X[i] = 0;   
+  eP3Y[i] = 0;
+  image(enemyImg,enemyX,enemyY);
+  image(enemyImg,treasureX,treasureY);
+  hpW -= 40;
+  if(hpW <= 0){
+  gameState = GAME_OVER;
+  }
+  }
+  }
+  } 
   
   //hit treasure
   if(fighterX <= treasureX+25 && fighterX >= treasureX-25 ){
